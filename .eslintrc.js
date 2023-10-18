@@ -8,5 +8,12 @@ module.exports = {
     env: {
       node: true, // Enable Node.js global variables
     },
+    settings: {
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true
+        }
+      }
+    }
   };
   
