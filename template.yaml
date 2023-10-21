@@ -12,6 +12,10 @@ Resources:
       Handler: handler.handler
       CodeUri: src/handler
       MemorySize: 512
+      Timeout: 10
+      Environment:
+        Variables:
+          DYNAMO_DB_TABLE: !Ref propertyScraperTable
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
@@ -30,7 +34,4 @@ Resources:
       KeySchema:
         - AttributeName: id
           KeyType: HASH
-      ProvisionedThroughput:
-        ReadCapacityUnits: 5
-        WriteCapacityUnits: 5
-
+      BillingMode: PAY_PER_REQUEST
