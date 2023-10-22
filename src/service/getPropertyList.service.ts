@@ -12,13 +12,7 @@ export const getPropertyData = async () => {
 };
 
 export const getPropertyPage = async (link: string) => {
-    try {
-        const res = await client.get<string>(link);
+    const res = await client.get<string>(link);
 
-        return res;
-    } catch (err) {
-        if (err instanceof AxiosError) {
-            console.log(err.response?.headers);
-        }
-    }
+    return res;
 };
